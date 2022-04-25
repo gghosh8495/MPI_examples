@@ -89,7 +89,6 @@ int main(int argc, char **argv)
                          MPI_INT, sender, mpitag, MPI_COMM_WORLD,
                          &rreq[peer_rank - 1]);
       assert(mpiret == MPI_SUCCESS);
-      printf("\nrank 0 recvs %d ints of total size %ld bytes from rank %d\n", (int)rb.size(), rb.size() * sizeof(int), sender);
     }
     /* make sure all messages have been received */
     mpiret = MPI_Waitall(2, rreq, MPI_STATUSES_IGNORE);
